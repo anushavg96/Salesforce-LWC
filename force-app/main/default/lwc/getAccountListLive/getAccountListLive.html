@@ -1,0 +1,16 @@
+<template>
+    <lightning-card class="slds-p-around_medium" variant="Narrow"  title="Account List" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+        <template for:each={accounts.data} for:item="account">
+        <a href="#" key={account.Id}>
+        <lightning-layout>
+            <lightning-layout-item>
+                <p>Name: {account.Name}<br/>
+                Phone: {account.Phone}</p>
+            </lightning-layout-item>
+        </lightning-layout>
+    </a>
+    </template>
+    </div>
+</lightning-card>
+</template>

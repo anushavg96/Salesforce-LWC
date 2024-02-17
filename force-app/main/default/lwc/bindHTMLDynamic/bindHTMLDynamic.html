@@ -1,0 +1,9 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Data Binding Dynamically" icon-name="standard:account">
+        <p class="slds-p-horizontal_small">Hello {greeting}!</p>
+        <br/>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Enter some text" value={greeting} onchange={handleChange}></lightning-input>
+        </div>
+    </lightning-card>
+</template>

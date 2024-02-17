@@ -1,0 +1,43 @@
+<template>
+    <!--With for each loop-->
+   <!--<lightning-card title="wire with for each" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accounts.data}>
+            <template for:each={accounts.data} for:item="account">
+                <a href="#" key={account.Id} onclick={handleSelect}>
+                    <lightning-layout>
+                        <lightning-layout-item padding="horizontal-small">
+                            <p>{account.Name}</p>
+                            <hr />
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </a>
+            </template>
+            </template>
+
+        </div>
+    </lightning-card>-->
+    <!--With Iterator loop-->
+    <lightning-card title="wire with iterator" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            <template if:true={accounts.data}>
+            <template iterator:it={accounts.data}>
+                <a href="#" key={it.value.Id} onclick={handleSelect} data-account-id={it.value.Id} data-account-name={it.value.Name}>
+                    <lightning-layout>
+                        <lightning-layout-item padding="horizontal-small">
+                            <div if:true={it.first}>
+                                <div style="border: 5px solid black"></div>
+                            </div>
+                            <p>{it.value.Name}</p>
+                            <div if:false={it.last}>
+                                <hr />
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </a>
+            </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

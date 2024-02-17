@@ -1,0 +1,20 @@
+<template>
+    <lightning-card  title="Wired using Imperative Method with Param" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            <lightning-input label="Search Account" value={searchKey} onchange={handleOnChange}></lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="Get Accounts" onclick={handleClick}></lightning-button>
+        </div>
+        <template if:true={accounts}>
+            <div class="slds-var-m-around_medium">
+                <template for:each={accounts} for:item="acc">
+                    <lightning-layout key={acc.Id} class="slds-var-m-vertical_x-small">
+                        <lightning-layout-item>{acc.Name}</lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </div>
+            <div class="slds-var-m-around_medium">{error}</div>
+        </template>
+    </lightning-card>
+</template>
